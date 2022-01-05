@@ -27,7 +27,12 @@ public class VeterinaryClinicAppApplication {
         animalService.add(testAnimal5);
         animalService.add(testAnimal6);
 
+        double testPayment1 = animalService.healForDays(1L, 2, "testOwnerId_001");
+        System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN\n", testAnimal1.getId(), testPayment1);
+        animalService.dischargeAnimal(1L);
 
+        double testPayment2 = animalService.healForHours(2L, 2, "testOwnerId_002");
+        System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN`\n", testAnimal2.getId(), testPayment2);
     }
 
 }
