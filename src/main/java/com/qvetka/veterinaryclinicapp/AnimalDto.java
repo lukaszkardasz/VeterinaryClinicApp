@@ -1,13 +1,13 @@
 package com.qvetka.veterinaryclinicapp;
 
-public class NewAnimalDto {
+public class AnimalDto {
     private Long id;
     private String spiece;
     private String name;
     private double hourPrice;
     private double dayPrice;
 
-    public NewAnimalDto(Long id, String spiece, String name, double hourPrice, double dayPrice) {
+    public AnimalDto(Long id, String spiece, String name, double hourPrice, double dayPrice) {
         this.id = id;
         this.spiece = spiece;
         this.name = name;
@@ -53,5 +53,15 @@ public class NewAnimalDto {
 
     public void setDayPrice(double dayPrice) {
         this.dayPrice = dayPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Zwierzak: " +
+                "id=" + id +
+                ", gatunek='" + spiece + '\'' +
+                ", imię='" + name + '\'' +
+                ", stawka_godzinowa=" + hourPrice +
+                ", stawka_dzienna=" + dayPrice;
     }
 }
