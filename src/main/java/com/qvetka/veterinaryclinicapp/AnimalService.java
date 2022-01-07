@@ -19,7 +19,7 @@ public class AnimalService {
 
     @Transactional
     public void add(AnimalDto newAnimal){
-        Animal animal = new Animal(newAnimal.getId(), newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getHourPrice(), newAnimal.getDayPrice());
+        Animal animal = new Animal(newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getHourPrice(), newAnimal.getDayPrice());
         animalRepository.save(animal);
     }
 
@@ -55,10 +55,9 @@ public class AnimalService {
     }
 
     public List<AnimalDto> findAllHealedAnimals(){
-        return animalRepository.findAllByOwnerIdIsNullOrderByDateOfDischargeDesc()
+        return animalRepository.findAllByDateOfDischargeIsNullOrderByDateOfDischargeDesc()
                 .stream()
                 .map(animal -> new AnimalDto(
-                        animal.getId(),
                         animal.getSpiece(),
                         animal.getName(),
                         animal.getHourPrice(),
@@ -66,11 +65,10 @@ public class AnimalService {
                 )).collect(Collectors.toList());
     }
 
-    public List<AnimalDto> findAllBySpiece(String spiece){
-        return animalRepository.findAllBySpieceIgnoreCase(spiece)
+    public List<AnimalDto> findAllBySpieceUnderThreatment(String spiece){
+        return animalRepository.findAnimalsBySpieceEqualsAndDateOfDischargeIsNull(spiece)
                 .stream()
                 .map(animal -> new AnimalDto(
-                        animal.getId(),
                         animal.getSpiece(),
                         animal.getName(),
                         animal.getHourPrice(),

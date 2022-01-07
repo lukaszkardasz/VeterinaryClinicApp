@@ -7,7 +7,7 @@ public class AnimalDto {
     private double hourPrice;
     private double dayPrice;
 
-    public AnimalDto(Long id, String spiece, String name, double hourPrice, double dayPrice) {
+    public AnimalDto(String spiece, String name, double hourPrice, double dayPrice) {
         this.id = id;
         this.spiece = spiece;
         this.name = name;
