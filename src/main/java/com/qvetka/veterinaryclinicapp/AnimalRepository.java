@@ -7,10 +7,10 @@ import java.util.Optional;
 
 public interface AnimalRepository extends CrudRepository<Animal, Long> {
 
-    List<Animal> findAllBySpieceIgnoreCase(String spiece);
+    List<Animal> findAnimalsBySpieceEqualsAndDateOfDischargeIsNull(String spiece);
+    List<Animal> findAllByDateOfDischargeIsNullOrderByDateOfDischargeDesc();
     Optional<Animal> findAnimalByName(String name);
     int countAllByOwnerIdIsNotNull();
-    List<Animal> findAllByOwnerIdIsNullOrderByDateOfDischargeDesc();
 
 
 }

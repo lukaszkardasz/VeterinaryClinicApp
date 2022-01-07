@@ -1,12 +1,15 @@
 package com.qvetka.veterinaryclinicapp;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
 public class Animal {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String spiece;
     private String name;
@@ -18,8 +21,7 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(Long id, String spiece, String name, double hourPrice, double dayPrice) {
-        this.id = id;
+    public Animal(String spiece, String name, double hourPrice, double dayPrice) {
         this.spiece = spiece;
         this.name = name;
         this.hourPrice = hourPrice;
