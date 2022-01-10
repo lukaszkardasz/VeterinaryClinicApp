@@ -7,3 +7,9 @@ VALUES
     ('Stanisław', 'Kołek', '621456443', 'stanislawkolek@example.com', 'Aleja Jana Pawła II 66', 'Warszawa', '00-121', 'Poland'),
     ('Marlena', 'Mruczek', '798456339', 'MeniMruczek@example.com', 'Krucza 225', 'Warszawa', '00-121', 'Poland');
 
+INSERT INTO
+    Animal(spiece, name, gender, color, coatTypeMarking, distinguishingMarks, demographicRegistrationNumber, tatooNumber, hourPrice, dayPrice)
+VALUES
+    ('cat', 'Puszek', 'male', 'ginger', null, null, null, null, '120', '900'),
+    ('dog', 'Reksio', 'male', 'black&white', null, null, null, null, '100', '600'),
+    ('dog', 'Azor', 'male', 'grey', null, null, null, null, '110', '1000');
