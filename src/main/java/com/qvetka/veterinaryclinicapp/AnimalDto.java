@@ -1,18 +1,35 @@
 package com.qvetka.veterinaryclinicapp;
 
+import java.time.LocalDateTime;
+
 public class AnimalDto {
     private Long id;
     private String spiece;
     private String name;
+    private String gender;
+    private String color;
+    private String coatTypeMarking;
+    private String distinguishingMarks;
+    private String demographicRegistrationNumber;
+    private String tatooNumber;
     private double hourPrice;
     private double dayPrice;
+    private String ownerId;
+    private LocalDateTime dateOfDischarge;
 
-    public AnimalDto(String spiece, String name, double hourPrice, double dayPrice) {
-        this.id = id;
+    public AnimalDto(String spiece, String name, String gender, String color, String coatTypeMarking, String distinguishingMarks, String demographicRegistrationNumber, String tatooNumber, double hourPrice, double dayPrice, String ownerId, LocalDateTime dateOfDischarge) {
         this.spiece = spiece;
         this.name = name;
+        this.gender = gender;
+        this.color = color;
+        this.coatTypeMarking = coatTypeMarking;
+        this.distinguishingMarks = distinguishingMarks;
+        this.demographicRegistrationNumber = demographicRegistrationNumber;
+        this.tatooNumber = tatooNumber;
         this.hourPrice = hourPrice;
         this.dayPrice = dayPrice;
+        this.ownerId = ownerId;
+        this.dateOfDischarge = dateOfDischarge;
     }
 
     public Long getId() {
@@ -55,13 +72,86 @@ public class AnimalDto {
         this.dayPrice = dayPrice;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getCoatTypeMarking() {
+        return coatTypeMarking;
+    }
+
+    public void setCoatTypeMarking(String coatTypeMarking) {
+        this.coatTypeMarking = coatTypeMarking;
+    }
+
+    public String getDistinguishingMarks() {
+        return distinguishingMarks;
+    }
+
+    public void setDistinguishingMarks(String distinguishingMarks) {
+        this.distinguishingMarks = distinguishingMarks;
+    }
+
+    public String getDemographicRegistrationNumber() {
+        return demographicRegistrationNumber;
+    }
+
+    public void setDemographicRegistrationNumber(String demographicRegistrationNumber) {
+        this.demographicRegistrationNumber = demographicRegistrationNumber;
+    }
+
+    public String getTatooNumber() {
+        return tatooNumber;
+    }
+
+    public void setTatooNumber(String tatooNumber) {
+        this.tatooNumber = tatooNumber;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public LocalDateTime getDateOfDischarge() {
+        return dateOfDischarge;
+    }
+
+    public void setDateOfDischarge(LocalDateTime dateOfDischarge) {
+        this.dateOfDischarge = dateOfDischarge;
+    }
+
     @Override
     public String toString() {
-        return "Zwierzak: " +
+        return "AnimalDto{" +
                 "id=" + id +
-                ", gatunek='" + spiece + '\'' +
-                ", imię='" + name + '\'' +
-                ", stawka_godzinowa=" + hourPrice +
-                ", stawka_dzienna=" + dayPrice;
+                ", spiece='" + spiece + '\'' +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", color='" + color + '\'' +
+                ", coatTypeMarking='" + coatTypeMarking + '\'' +
+                ", distinguishingMarks='" + distinguishingMarks + '\'' +
+                ", demographicRegistrationNumber='" + demographicRegistrationNumber + '\'' +
+                ", tatooNumber='" + tatooNumber + '\'' +
+                ", hourPrice=" + hourPrice +
+                ", dayPrice=" + dayPrice +
+                ", ownerId='" + ownerId + '\'' +
+                ", dateOfDischarge=" + dateOfDischarge +
+                '}';
     }
 }

@@ -19,7 +19,7 @@ public class AnimalService {
 
     @Transactional
     public void add(AnimalDto newAnimal){
-        Animal animal = new Animal(newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getHourPrice(), newAnimal.getDayPrice());
+        Animal animal = new Animal(newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getGender(), newAnimal.getColor(), newAnimal.getColor(), newAnimal.getDistinguishingMarks(), newAnimal.getDemographicRegistrationNumber(), newAnimal.getTatooNumber(), newAnimal.getHourPrice(), newAnimal.getDayPrice(), newAnimal.getOwnerId(), newAnimal.getDateOfDischarge());
         animalRepository.save(animal);
     }
 
@@ -58,10 +58,18 @@ public class AnimalService {
         return animalRepository.findAllByDateOfDischargeIsNullOrderByDateOfDischargeDesc()
                 .stream()
                 .map(animal -> new AnimalDto(
-                        animal.getSpiece(),
                         animal.getName(),
+                        animal.getSpiece(),
+                        animal.getGender(),
+                        animal.getColor(),
+                        animal.getCoatTypeMarking(),
+                        animal.getDistinguishingMarks(),
+                        animal.getDemographicRegistrationNumber(),
+                        animal.getTatooNumber(),
                         animal.getHourPrice(),
-                        animal.getDayPrice()
+                        animal.getDayPrice(),
+                        animal.getOwnerId(),
+                        animal.getDateOfDischarge()
                 )).collect(Collectors.toList());
     }
 
@@ -69,10 +77,18 @@ public class AnimalService {
         return animalRepository.findAnimalsBySpieceEqualsAndDateOfDischargeIsNull(spiece)
                 .stream()
                 .map(animal -> new AnimalDto(
-                        animal.getSpiece(),
                         animal.getName(),
+                        animal.getSpiece(),
+                        animal.getGender(),
+                        animal.getColor(),
+                        animal.getCoatTypeMarking(),
+                        animal.getDistinguishingMarks(),
+                        animal.getDemographicRegistrationNumber(),
+                        animal.getTatooNumber(),
                         animal.getHourPrice(),
-                        animal.getDayPrice()
+                        animal.getDayPrice(),
+                        animal.getOwnerId(),
+                        animal.getDateOfDischarge()
                 )).collect(Collectors.toList());
     }
 
