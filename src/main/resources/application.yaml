@@ -4,9 +4,11 @@ spring:
       enabled: true
       path: /h2-console
   datasource:
-    url: jdbc:h2:mem:test;DATABASE_TO_UPPER=false
-    username: admin
-    password:
+#    url: jdbc:h2:mem:test;DATABASE_TO_UPPER=false
+    url: jdbc:mysql://192.168.1.24::3306/company?useSSL=false&serverTimezone=Europe/Warsaw
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: n2god
+    password: 46812123aXXdatabase!
   jpa:
     defer-datasource-initialization: true
     show-sql: true
