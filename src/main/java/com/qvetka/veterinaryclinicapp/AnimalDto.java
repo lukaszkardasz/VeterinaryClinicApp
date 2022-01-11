@@ -17,7 +17,7 @@ public class AnimalDto {
     private String ownerId;
     private LocalDateTime dateOfDischarge;
 
-    public AnimalDto(String spiece, String name, String gender, String color, String coatTypeMarking, String distinguishingMarks, String demographicRegistrationNumber, String tatooNumber, double hourPrice, double dayPrice) {
+    public AnimalDto(String spiece, String name, String gender, String color, String coatTypeMarking, String distinguishingMarks, String demographicRegistrationNumber, String tatooNumber, double hourPrice, double dayPrice, String ownerId, LocalDateTime dateOfDischarge) {
         this.spiece = spiece;
         this.name = name;
         this.gender = gender;
@@ -28,6 +28,8 @@ public class AnimalDto {
         this.tatooNumber = tatooNumber;
         this.hourPrice = hourPrice;
         this.dayPrice = dayPrice;
+        this.ownerId = ownerId;
+        this.dateOfDischarge = dateOfDischarge;
     }
 
     public Long getId() {

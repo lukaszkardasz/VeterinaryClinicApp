@@ -6,6 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 @SpringBootApplication
 public class VeterinaryClinicAppApplication {
@@ -14,9 +15,16 @@ public class VeterinaryClinicAppApplication {
 
         ConfigurableApplicationContext context = SpringApplication.run(VeterinaryClinicAppApplication.class, args);
 
-        AnimalDto testAnimal4 = new AnimalDto( "cat", "Puszek", "male", "ginger", null, null, null, null, 120, 900);
-        AnimalDto testAnimal5 = new AnimalDto( "dog", "Reksio", "male", "black&white", null, null, null, null, 100, 600);
-        AnimalDto testAnimal6 = new AnimalDto( "dog", "Azor", "male", "grey", null, null, null, null, 110, 1000);
+        EmployeeRepository employeeRepository = context.getBean(EmployeeRepository.class);
+        Employee employee1 = new Employee("Paweł", "Kowal", "doktor weterynarii", "12345", 12000.0);
+        Employee employee2 = new Employee("Iza", "Kura", "stażysta", null, 2500.0);
+        employeeRepository.save(employee1);
+        employeeRepository.save(employee2);
+
+
+        AnimalDto testAnimal4 = new AnimalDto( "cat", "Pusia", "female", "darkginger", null, null, null, null, 120, 900, null, null);
+        AnimalDto testAnimal5 = new AnimalDto( "dog", "Fifek", "male", "black", null, null, null, null, 70, 400, null, null);
+        AnimalDto testAnimal6 = new AnimalDto( "dog", "Ziomo", "male", "red", null, null, null, null, 150, 1700, null, null);
 
         AnimalService animalService = context.getBean(AnimalService.class);
 
@@ -24,21 +32,20 @@ public class VeterinaryClinicAppApplication {
         animalService.add(testAnimal5);
         animalService.add(testAnimal6);
 
-        double testPayment1 = animalService.healForDays(4L, 2, "testOwnerId_004");
+        double testPayment1 = animalService.healForDays(4L, 2, "4");
         System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN\n", testAnimal4.getId(), testPayment1);
         animalService.dischargeAnimal(1L);
 
-        double testPayment2 = animalService.healForHours(2L, 2, "testOwnerId_002");
+        double testPayment2 = animalService.healForHours(2L, 2, "2");
         System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN`\n", testAnimal5.getId(), testPayment2);
 
-        animalService.deleteById(6L);
-        System.out.println("Usuwam zwierzę o id: 6");
+        animalService.deleteById(7L);
+        System.out.println("Usuwam zwierzę o id: 7");
 
         int healedAnimalsCount = animalService.countHealedAnimals();
         System.out.println("Wypisaliśmy: " + healedAnimalsCount + " zwierzę.");
 
-        Optional<Animal> animalByName = animalService.findAnimalByName("Puszek");
-        System.out.println("Szukane zwierzę: " + animalByName.isPresent());
+//8
 
         List<AnimalDto> cats = animalService.findAllBySpieceUnderThreatment("cat");
         System.out.println("Lista wszystkich leczonych kotów:");
@@ -50,5 +57,8 @@ public class VeterinaryClinicAppApplication {
 
         UserRepository userRepository = context.getBean(UserRepository.class);
         userRepository.findAll().forEach(System.out::println);
+
+        new Scanner(System.in).nextLine();
+
     }
 }

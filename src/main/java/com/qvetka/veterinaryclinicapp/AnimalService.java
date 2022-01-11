@@ -19,7 +19,7 @@ public class AnimalService {
 
     @Transactional
     public void add(AnimalDto newAnimal){
-        Animal animal = new Animal(newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getGender(), newAnimal.getColor(), newAnimal.getColor(), newAnimal.getDistinguishingMarks(), newAnimal.getDemographicRegistrationNumber(), newAnimal.getTatooNumber(), newAnimal.getHourPrice(), newAnimal.getDayPrice());
+        Animal animal = new Animal(newAnimal.getSpiece(), newAnimal.getName(), newAnimal.getGender(), newAnimal.getColor(), newAnimal.getColor(), newAnimal.getDistinguishingMarks(), newAnimal.getDemographicRegistrationNumber(), newAnimal.getTatooNumber(), newAnimal.getHourPrice(), newAnimal.getDayPrice(), newAnimal.getOwnerId(), newAnimal.getDateOfDischarge());
         animalRepository.save(animal);
     }
 
@@ -67,7 +67,9 @@ public class AnimalService {
                         animal.getDemographicRegistrationNumber(),
                         animal.getTatooNumber(),
                         animal.getHourPrice(),
-                        animal.getDayPrice()
+                        animal.getDayPrice(),
+                        animal.getOwnerId(),
+                        animal.getDateOfDischarge()
                 )).collect(Collectors.toList());
     }
 
@@ -84,7 +86,9 @@ public class AnimalService {
                         animal.getDemographicRegistrationNumber(),
                         animal.getTatooNumber(),
                         animal.getHourPrice(),
-                        animal.getDayPrice()
+                        animal.getDayPrice(),
+                        animal.getOwnerId(),
+                        animal.getDateOfDischarge()
                 )).collect(Collectors.toList());
     }
 

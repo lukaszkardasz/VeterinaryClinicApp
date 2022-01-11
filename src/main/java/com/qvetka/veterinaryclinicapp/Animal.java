@@ -27,7 +27,7 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(String spiece, String name, String gender, String color, String coatTypeMarking, String distinguishingMarks, String demographicRegistrationNumber, String tatooNumber, double hourPrice, double dayPrice) {
+    public Animal(String spiece, String name, String gender, String color, String coatTypeMarking, String distinguishingMarks, String demographicRegistrationNumber, String tatooNumber, double hourPrice, double dayPrice, String ownerId, LocalDateTime dateOfDischarge) {
         this.spiece = spiece;
         this.name = name;
         this.gender = gender;
