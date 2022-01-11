@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+    <changeSet id="0001-1" author="n2god">
+        <createTable tableName="ANIMAL">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="coat_type_marking" type="VARCHAR(255)"/>
+            <column name="color" type="VARCHAR(255)" />
+            <column name="date_of_discharge" type="datetime(6)" />
+            <column name="day_price" type="double" />
+            <column name="hour_price" type="double" />
+            <column name="demographic_registration_number" type="VARCHAR(255)" />
+            <column name="distinguishing_marks" type="VARCHAR(255)" />
+            <column name="gender" type="VARCHAR(255)" />
+            <column name="name" type="VARCHAR(255)" />
+            <column name="owner_id" type="VARCHAR(255)" />
+            <column name="spiece" type="VARCHAR(255)" />
+            <column name="tatoo_number" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

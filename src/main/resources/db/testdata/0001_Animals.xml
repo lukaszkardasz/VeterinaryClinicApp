@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+    <changeSet id="0001-testdata-1" author="n2god">
+        <insert tableName="animal">
+            <column name="coat_type_marking" value="null"/>
+            <column name="color" value="red"/>
+            <column name="date_of_discharge" value="null"/>
+            <column name="day_price" value="800"/>
+            <column name="demographic_registration_number" value="12345"/>
+            <column name="distinguishing_marks" value="scar on ear"/>
+            <column name="gender" value="male"/>
+            <column name="hour_price" value="80"/>
+            <column name="name" value="Puszek"/>
+            <column name="owner_id" value="1"/>
+            <column name="spiece" value="cat"/>
+            <column name="tatoo_number" value="9876321342"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="coat_type_marking" value="null"/>
+            <column name="color" value="black and white"/>
+            <column name="date_of_discharge" value="null"/>
+            <column name="day_price" value="700"/>
+            <column name="demographic_registration_number" value="17775"/>
+            <column name="distinguishing_marks" value="none"/>
+            <column name="gender" value="male"/>
+            <column name="hour_price" value="80"/>
+            <column name="name" value="Reksio"/>
+            <column name="owner_id" value="2"/>
+            <column name="spiece" value="dog"/>
+            <column name="tatoo_number" value="12312355535"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="coat_type_marking" value="like cow"/>
+            <column name="color" value="white"/>
+            <column name="date_of_discharge" value="null"/>
+            <column name="day_price" value="1200"/>
+            <column name="demographic_registration_number" value="22345"/>
+            <column name="distinguishing_marks" value="none"/>
+            <column name="gender" value="male"/>
+            <column name="hour_price" value="110"/>
+            <column name="name" value="Mućka"/>
+            <column name="owner_id" value="3"/>
+            <column name="spiece" value="cow"/>
+            <column name="tatoo_number" value="4564984123"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

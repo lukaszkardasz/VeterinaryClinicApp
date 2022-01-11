@@ -1,0 +1,23 @@
+spring:
+  liquibase:
+    change-log: classpath:db/master.xml
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:test;DATABASE_TO_UPPER=false
+#    url: jdbc:mysql://192.168.1.24:3306/company?useSSL=false&serverTimezone=Europe/Warsaw
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    password:
+#  jpa:
+#    defer-datasource-initialization: true
+#    show-sql: true
+#    hibernate:
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#      ddl-auto: create-drop #tworzenie bazy danych i zniszczenie jej po zatrzymaniu - podobnie jak w H2
+#  sql:
+#    init:
+#      mode: always #wykonanie skryptu z /resources/schema.sql i /resources/data.sql czyli to samo co create z ddl-auto wyżej no i dodatkowo dane testowe

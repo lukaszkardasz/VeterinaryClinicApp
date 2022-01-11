@@ -13,17 +13,17 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String academicDegree;
-    private String PWZ;
+    private String pwz;
     private double salary;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String academicDegree, String PWZ, double salary) {
+    public Employee(String firstName, String lastName, String academicDegree, String pwz, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.academicDegree = academicDegree;
-        this.PWZ = PWZ;
+        this.pwz = pwz;
         this.salary = salary;
     }
 
@@ -59,12 +59,12 @@ public class Employee {
         this.academicDegree = academicDegree;
     }
 
-    public String getPWZ() {
-        return PWZ;
+    public String getpwz() {
+        return pwz;
     }
 
-    public void setPWZ(String PWZ) {
-        this.PWZ = PWZ;
+    public void setpwz(String pwz) {
+        this.pwz = pwz;
     }
 
     public double getSalary() {
@@ -82,7 +82,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", academicDegree='" + academicDegree + '\'' +
-                ", PWZ='" + PWZ + '\'' +
+                ", PWZ='" + pwz + '\'' +
                 ", salary='" + salary + '\'' +
                 '}';
     }

@@ -36,16 +36,14 @@ public class VeterinaryClinicAppApplication {
         System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN\n", testAnimal4.getId(), testPayment1);
         animalService.dischargeAnimal(1L);
 
-        double testPayment2 = animalService.healForHours(2L, 2, "2");
+        double testPayment2 = animalService.healForHours(5L, 2, "5");
         System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN`\n", testAnimal5.getId(), testPayment2);
 
-        animalService.deleteById(2L);
-        System.out.println("Usuwam zwierzę o id: 2");
+//        animalService.deleteById(2L);
+//        System.out.println("Usuwam zwierzę o id: 2");
 
         int healedAnimalsCount = animalService.countHealedAnimals();
         System.out.println("Wypisaliśmy: " + healedAnimalsCount + " zwierzę.");
-
-//8
 
         List<AnimalDto> cats = animalService.findAllBySpieceUnderThreatment("cat");
         System.out.println("Lista wszystkich leczonych kotów:");

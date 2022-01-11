@@ -10,12 +10,12 @@ spring:
     username: n2god
     password: 46812123aXXdatabase!
   jpa:
-    defer-datasource-initialization: true
+#    defer-datasource-initialization: true #plik z danymi testowym z /resources/data.sql i wykona się po wygenerowaniu schematu bazy danych przez Hibernate
     show-sql: true
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      ddl-auto: create-drop #tworzenie bazy danych i zniszczenie jej po zatrzymaniu - podobnie jak w H2
-  sql:
-    init:
-      mode: always #wykonanie skryptu z /resources/schema.sql i /resources/data.sql czyli to samo co create z ddl-auto wyżej no i dodatkowo dane testowe
+#      ddl-auto: update #tylko update bazy danych
+#  sql:
+#    init:
+#      mode: always #wykonanie skryptu z /resources/schema.sql i /resources/data.sql czyli to samo co create z ddl-auto wyżej no i dodatkowo dane testowe
