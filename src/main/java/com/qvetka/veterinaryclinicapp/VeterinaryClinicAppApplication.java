@@ -39,8 +39,8 @@ public class VeterinaryClinicAppApplication {
         double testPayment2 = animalService.healForHours(2L, 2, "2");
         System.out.printf("Należność za leczenie zwierzaka o id: %s wynosi: %.2f PLN`\n", testAnimal5.getId(), testPayment2);
 
-        animalService.deleteById(7L);
-        System.out.println("Usuwam zwierzę o id: 7");
+        animalService.deleteById(2L);
+        System.out.println("Usuwam zwierzę o id: 2");
 
         int healedAnimalsCount = animalService.countHealedAnimals();
         System.out.println("Wypisaliśmy: " + healedAnimalsCount + " zwierzę.");
